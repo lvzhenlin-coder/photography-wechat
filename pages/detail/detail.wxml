@@ -1,0 +1,74 @@
+<!--pages/detail/detail.wxml-->
+<!-- <van-image width="750rpx" height="400rpx" src="{{params.url}}" /> -->
+<!-- <view class="top">
+  <van-image width="750rpx" fit="widthFix"src="{{url}}"/> 
+</view>
+
+
+<view class="detail-i">
+  <view class="introduction">
+    <text  class="detail-title"> {{name1}}</text>
+
+    <view  class="detail-phototype"> <text class="type">{{type}}</text></view>
+  </view>
+
+
+</view>
+
+<view class="detail-BriefIntroduction"> {{datacontent}}</view>
+
+
+<view wx:for="{{list}}" wx:for-item="urls" class="imgs" > 
+  <van-image  class="d-img" width="750rpx" fit="widthFix" src="https://请求地址{{urls.img_url}}"/> 
+</view> -->
+
+
+
+<!--pages/post/post-detail/post-detail.wxml-->
+
+<view class="detail-container">
+<view class="out">
+  <van-image class="head-image" src="{{url}}" width="750rpx" fit="widthFix" />
+</view>
+
+
+
+  <view class="author-date">
+    <!-- <image class="avatar" src="../../images/nav/shezhi.png"></image> -->
+    <!-- <text class="const-text">发表于</text> -->
+    <!-- <text class="date">{{date}}</text> -->
+
+
+    
+  </view>
+  <!--  -->
+  <text class="title">{{name1}}  <text class="type"> {{type}}</text></text> 
+  
+  <view class="tool">
+    <view class="circle-img">
+       <image src="../../images/nav/shezhi.png"></image> 
+      <!-- <image class="share-img" src="/images/icon/share.png"></image> --> 
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <text class="detail">{{datacontent}}</text>
+</view>
+
+<view class="tool">
+    <view class="circle-img">
+       <image src="#javascript::"></image> 
+      <!-- <image class="share-img" src="/images/icon/share.png"></image> --> 
+    </view>
+    <view class="horizon"></view>
+  </view>
+
+
+
+<view wx:for="{{list}}" wx:for-item="urls" class="imgs" > 
+  <image
+    src="{{httpUrl}}{{urls.img_url}}"
+    mode="widthFix"
+    bindload="imgLoadComplete"
+  >
+  </image>
+</view>

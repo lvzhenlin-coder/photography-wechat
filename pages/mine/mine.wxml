@@ -1,0 +1,67 @@
+<!--pages/mine/mine.wxml-->
+<view class="result">
+  <view wx:if="{{ show }}" >
+    <view class="information-card">
+      <view class="information-portrait">
+        <van-image
+          round
+          width="150rpx"
+          height="150rpx"
+          fit="contain"
+          src="{{ userImg }}"
+        />
+      </view>
+      <view class="username">
+        {{username}}
+      </view>
+    </view>
+    <view class="management">
+      <van-cell
+        is-link
+        title="预约管理"
+        link-type="navigateTo"
+        url="../../pages/order/order"
+        icon="label-o"
+        size="large"
+      />
+      <van-cell
+        is-link
+        title="我的收藏"
+        link-type="navigateTo"
+        icon="star-o"
+        size="large"
+        bind:click="setToast"
+      />
+      <van-cell
+        is-link
+        title="发表评论"
+        link-type="navigateTo"
+        icon="good-job-o"
+        size="large"
+        bind:click="setToast"
+      />
+      <van-cell
+        is-link
+        title="建议反馈"
+        bind:click="setToast"
+        link-type="navigateTo"
+        icon="chat-o"
+        size="large"
+      />
+      <van-cell
+        is-link
+        title="我的设置"
+        bind:click="setToast"
+        link-type="navigateTo"
+        icon="setting-o"
+        size="large"
+      />
+    </view>
+  </view>
+  <van-dialog id="van-dialog" confirm-button-color="green"/>
+  <van-toast id="van-toast" />
+</view>
+
+
+
+

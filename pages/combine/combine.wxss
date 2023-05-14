@@ -1,0 +1,61 @@
+/* pages/combine/combine.wxss */
+.container{
+  margin: 0;
+  padding: 0;
+}
+.imagesize{
+  display:flex;
+  justify-content: center;  
+  align-items:center;      
+  margin-top: 20rpx;         
+}
+.imagesize image{
+  width: 650rpx;
+}
+.fontcolor{
+  color: red;
+  margin-bottom: 20rpx;
+  
+}
+.suit{
+  font-size: 50rpx;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.suits{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+
+/* 页面背景颜色为 #f2f2f2 */
+page {
+  background: #f2f2f2;
+}
+
+
+/* pages/suit/suit.wxss */
+.imagesize{
+
+  display:flex;
+  justify-content: center;  
+  align-items:center;               
+}
+.fontcolor{
+  color: red;
+  margin-bottom: 20rpx;
+  
+}
+.suit{
+  font-size: 30rpx;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}

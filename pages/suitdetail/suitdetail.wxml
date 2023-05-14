@@ -1,0 +1,56 @@
+<!--pages/suitdetail/suitdetail.wxml-->
+<view class="box1">
+  <van-image  class="sd-img" width="750rpx" height="400rpx" src="{{url}}"/> 
+
+  
+</view>
+
+<view class="box7">
+    <text>{{name}}</text>
+    <view class="jiage">價格面議</view>
+  </view>
+
+  <view style="display: flex;margin-top:50rpx ;">
+      <view style="background-color: lightgray; width: 100%; height: 5rpx;"></view>
+    </view>
+
+<view class="contact">
+    <view id="lianxi">联系我们</view>
+
+    <view style="display: flex;margin-top:50rpx ;">
+      <view style="background-color: lightgray; width: 100%; height: 5rpx;"></view>
+    </view>
+
+    <view class="">
+
+    <view class="box6">
+    <text>名稱  </text>
+    <text class="con">111111111111111</text>
+    </view>
+
+    <view style="display: flex;margin-top:50rpx ;">
+      <view style="background-color: lightgray; width: 100%; height: 5rpx;"></view>
+    </view>
+
+    <view class="box2">
+    <text>微信</text>
+    <text class="con">111111111111111</text>
+    
+    </view>
+ 
+    <view style="display: flex;margin-top:50rpx ;">
+      <view style="background-color: lightgray; width: 100%; height: 5rpx;"></view>
+    </view>
+
+    <view class="box3">
+    <text>電話</text>
+    <text class="con">111111111111111</text>
+    </view>
+    
+ 
+    </view>
+</view>
+
+<view class="bottom"> 
+
+</view>

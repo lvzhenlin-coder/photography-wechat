@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "appointment-button": "../../component/appointment/appointment"
+
+  }
+}

@@ -1,0 +1,130 @@
+<!--pages/combine/combine.wxml-->
+<!-- <text>pages/combine/combine.wxml</text> -->
+<!-- 
+<view  bindtap="clothes">
+  <view class='imagesize' >
+    <van-image  class="c-img" width="650rpx" height="400rpx" src="https://img.yzcdn.cn/vant/cat.jpeg"/> 
+  </view>
+
+<view class="suits">
+  <view>
+    服裝介紹
+  </view>
+
+  <view class="fontcolor">
+    点击查看
+  </view>
+</view>
+</view>
+
+<view >
+  <view class='imagesize'>
+    <!-- <van-image  class="c-img" width="650rpx" height="400rpx" src="https://img.yzcdn.cn/vant/cat.jpeg"/>  -->
+  <!-- </view>
+
+<view class="suit">
+  <view>
+    套餐介紹
+  </view>
+
+  <view class="fontcolor">
+ 
+  </view>
+</view>
+</view>  -->
+
+
+<van-tabs bind:click="onClick" color="#90DBE6" title-active-color="#90DBE6">
+  <van-tab title="套餐">
+    <view 
+      wx:for="{{suit}}" 
+      wx:for-item="suits"  
+      data-url="https://请求地址{{suits.cover_url}}" 
+      data-name="{{suits.type_name}}"
+    >
+    <view class='imagesize'>
+      <!-- <van-image  
+        class="c-img" 
+        width="650rpx" 
+        height="400rpx" 
+        src="https://请求地址{{suits.cover_url}}"
+      />  -->
+      <image
+        src="https://请求地址{{suits.cover_url}}"
+        mode="widthFix"
+        lazy-load="true"
+        show-menu-by-longpress="true"
+        bindtap="previewImage"
+        data-src="https://请求地址{{suits.cover_url}}"
+      >
+      </image>
+    </view>
+    <view class="suits">
+      <view>
+        {{suits.type_name}}
+      </view>
+
+  <view class="fontcolor">
+    <!-- 点击查看 -->
+  </view>
+</view>
+</view>
+
+
+<appointment-button></appointment-button>
+  </van-tab>
+  <van-tab title="服装">
+    <view 
+      wx:for="{{cloth}}" 
+      wx:for-item="suits"
+    >
+  <view class='imagesize'>
+    <!-- <van-image  
+      class="c-img"
+      width="650rpx" 
+      height="400rpx" 
+      src="https://请求地址{{suits.cover_url}}"
+    /> -->
+    <image
+      src="https://请求地址{{suits.cover_url}}"
+      mode="widthFix"
+      lazy-load="true"
+      show-menu-by-longpress="true"
+      bindtap="previewSuit"
+      data-src="https://请求地址{{suits.cover_url}}"
+    >
+    </image>
+  </view>
+  <view class="suit">
+  <view>
+    <!-- {{suits.type_name}} -->
+  </view>
+
+
+</view>
+</view>
+
+<appointment-button></appointment-button>
+  </van-tab>
+</van-tabs>
+
+
+
+
+<!-- <view class="container">
+  <view class="set-menu">
+    <view class="set-menu-title">
+      套餐一
+    </view>
+    <view class="set-menu-image">
+      <van-image
+        width="600rpx"
+        fit="widthFix"
+        lazy-load
+        src="https://img.yzcdn.cn/vant/cat.jpeg"
+      />
+    </view>
+  </view>
+  <appointment-button></appointment-button>
+  <van-dialog id="van-dialog" confirm-button-color="green"/>
+</view> -->

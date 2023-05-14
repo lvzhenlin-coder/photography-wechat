@@ -1,0 +1,12 @@
+<!--pages/success/success.wxml-->
+<view class="container">
+	<view class="icon">
+		<van-icon name="checked" size="200rpx" color="#07C160"/>
+	</view>
+	<view class="text">
+		恭喜您预约成功！
+	</view>
+	<view class="page-button">
+		<van-button type="primary" size="large" bindtap="goToPage">点击查看预约进度</van-button>
+	</view>
+</view>

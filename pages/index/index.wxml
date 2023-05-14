@@ -1,0 +1,148 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 轮播图 -->
+  <view class="carousel">
+    <swiper 
+      autoplay 
+      interval="3000" 
+      duration="500" 
+      indicator-dots="true"
+      circular="true"
+      bind:load="bannerLoad"
+      style="height: {{bannerImgHeight}};"
+    >
+      <swiper-item wx:for="{{bannerListUrl}}">
+          <image
+            src="{{item}}"
+            mode="widthFix"
+            lazy-load="true"
+            bindload="bannerLoad"
+          >
+          </image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 预约关注 -->
+  <view class="piece-head" style="margin-top: 0rpx;">
+    <view class="piece-head-text1">About Us</view>
+    <view class="piece-head-text2">关于我们</view>
+    <view class="regarding3">
+      <image 
+        src="{{httpUrl}}file/other/logo.png"
+      >
+      </image>
+    </view>
+    <view class="regarding4">校园摄影专家</view>
+    <view class="regarding5">
+      <button class="button1" open-type="contact">客服咨询</button>
+      <button class="button2" bindtap="subscribe">+关注</button>
+    </view>
+  </view> 
+  <!-- 作品展示 -->
+  <view class="piece-head" wx:if="{{showWroks}}">
+    <view class="piece-head-text1">Works Exhibition</view>
+    <view class="piece-head-text2">作品推荐</view>
+    <!-- <view class="exhibition-nav-allthings">
+      <view class="exhibition-allthings">
+        <van-tabs active="{{ active }}" bind:change="onChange" swipeable="true" title-active-color="#90dbe6" ellipsis="false">
+          <van-tab title="全部">
+            <view class="exhibition-nav-things">
+              <view class="exhibition-nav-thing" wx:for="{{exhibitionList}}">
+              <view class="exhibition-img"> <image src="{{item.url}}"></image></view>
+              <view class="allthing-text1">{{item.name}}</view>
+              <view class="allthing-text2">{{item.title}}</view>
+              </view>
+            </view>
+          </van-tab>
+        </van-tabs>
+        <view class="regarding5">
+         <button class="button2 view">查看全部</button>
+        </view>
+      </view>
+    </view>  -->
+    <view class="showWorks">
+      <view 
+        wx:for="{{ worksList }}" 
+        class="works-container" 
+        hover-class="works-container-hover"
+        bindtap="goToDetail" 
+        data-id="{{ item}}"
+      >
+        <view class="works-img">
+          <!-- <van-image 
+            lazy-load
+            width="300rpx" 
+            fit="widthFix"
+            src="{{item.url}}" 
+          /> -->
+          <image 
+            src="{{item.url}}"
+            lazy-load="true"
+            mode="widthFix"
+          >
+          
+          </image>
+        </view>
+        <view class="works-title">
+          {{item.title}}
+        </view>
+        <view class="works-time">
+          {{item.time}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 用户评价 -->
+  <view class="piece-head">
+    <view class="piece-head-text1">Comment</view>
+    <view class="piece-head-text2">用户评价</view>
+       <view class="nav-comment">
+        <scroll-view class="" scroll-x>
+        <view class="nav-scroll" bind:change="onChange">
+          <view class="nav-inscroll" wx:for="{{commentList}}">
+            <view class="ad-con">
+              <view class="ad-head"><image src="{{item.userHead}}"></image></view>
+                <view class="comment-title">
+                  <view class="title-name">{{item.userName}}</view>
+                  <view class="content-data">{{item.commentTime}}</view>
+                </view>
+                <view class="comment-star">
+                  <van-rate
+                    value="{{ rateValue }}"
+                    size="{{ 15 }}"
+                    color="#ffd21e"
+                    void-icon="star"
+                    void-color="#eee"
+                    readonly
+                    bind:change="onChangeStar"
+                  />
+                </view>
+              </view>
+            <view class="description">{{item.desc}}</view>
+          </view>
+
+        </view>
+        </scroll-view>
+       </view>
+
+  </view>
+  <appointment-button></appointment-button>
+  <van-dialog
+    use-slot
+    title="长按识别二维码，关注微信公众号"
+    show="{{ showOR }}"
+    show-cancel-button
+    bind:close="onClose"
+    confirm-button-color="#90dbe6"
+  >
+    <view class="accountQR">
+      <image 
+        show-menu-by-longpress="true" 
+        src="{{httpUrl}}file/other/accountQR.jpg" 
+        style="width: 400rpx; height: 400rpx;"
+        lazy-load="true"
+      >
+      </image>
+    </view>
+  </van-dialog>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/suit/suit.wxml-->
+<view wx:for="{{cloth}}" wx:for-item="suits">
+  <view class='imagesize'>
+    <van-image  class="c-img" width="650rpx" height="400rpx" src="https://请求地址{{suits.cover_url}}"/>
+  </view>
+
+
+  <view class="suit">
+  <view>
+    <!-- {{suits.type_name}} -->
+  </view>
+
+
+</view>
+</view>

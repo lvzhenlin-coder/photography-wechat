@@ -1,0 +1,28 @@
+<!--pages/menu/menu.wxml-->
+<view class="icon"> </view>
+<view wx:for="{{content}}" wx:for-item="items" class="item-all" > 
+
+
+
+  <!-- <navigator url="../detail/detail?data1={{items.name}}&data2={{items.type}}&data3={{items.url}}&data4={{items.datacontent}}" hover-class="none"><van-image width="750rpx" height="400rpx" src="{{items.url}}" /></navigator> -->
+   <van-image width="750rpx" fit="widthFix" src="https://请求地址{{items.cover_url}}" bindtap="jumpurl"  data-url="https://请求地址{{items.cover_url}}" data-id="{{items.work_id}}" data-name="{{items.work_title}}" data-type="{{items.type_name}}" data-datacontent="{{items.work_desc}}" /> 
+<view class="NameTag"> 
+<view  class="titleTag"> {{items.work_title}}</view>
+<view  class="phototype"> {{items.type_name}}   </view>  
+
+<view class="BriefIntroduction"> {{items.work_desc}}</view>
+</view>
+
+</view>
+
+<view class="moremore">
+  <text class="bu" bindtap="setLoading" wx:if="{{show}}">
+    {{loadtext}}
+  </text>
+  <text class="bu1" bindtap="setLoading" wx:if="{{!show}}">
+    {{loadtext}}
+  </text>
+</view>
+ 
+<appointment-button></appointment-button>
+

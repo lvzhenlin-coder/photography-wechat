@@ -1,0 +1,52 @@
+/* pages/suitdetail/suitdetail.wxss */
+ .box1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+
+.contact{
+   /* background-color: #dddddd;  */
+  font-size: 30rpx;
+  /* margin-top:150rpx ; */
+  margin-left:50rpx ;
+  margin-right:50rpx ;
+  padding: 30rpx 30rpx;
+  margin-bottom: 42rpx;
+}
+
+.box2{
+  margin-top: 20rpx;
+}
+.box3{
+  margin-top:20rpx;
+}
+#lianxi{
+  font-size: 50rpx;
+}
+.bottom{
+  background-color:#aaaaaa;
+  width: 750rpx;
+  height: 100rpx;
+}
+.box4{
+  margin-top:20rpx;
+  padding-bottom: 50rpx;
+}
+.con{
+  margin-left:20rpx ;
+}
+.box6{
+  margin-top:30rpx ;
+}
+.box7{
+  margin-left: 80rpx;
+  margin-top: 30rpx;
+}
+
+.jiage{
+  color: red;
+  font-size: 30rpx;
+}

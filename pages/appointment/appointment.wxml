@@ -1,0 +1,143 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="container">
+	<view class="logo">
+		<image mode="widthFix" src="{{httpUrl}}file/other/logo.png"></image>
+	</view>
+	<view class="project-select">
+		<van-field
+			readonly
+			required
+			label="预约服务"
+			model:value="{{ value }}"
+			placeholder="请选择服务项目"
+			border="{{ true }}"
+			is-link
+			left-icon="description"
+			bind:click-input="selectProject"
+		/>
+		<van-field
+			label="拍摄校区"
+			readonly
+			is-link
+			required
+			type="textarea"
+			autosize
+			model:value="{{ campusAddress }}"
+			placeholder="请选择拍摄校区"
+			border="{{ true }}"
+			left-icon="flag-o"
+			bind:click-input="selectCampus"
+		/>
+		<van-field
+			readonly	
+			required
+			label="预约日期"
+			model:value="{{ date }}"
+			placeholder="请选择服务日期"
+			border="{{ true }}"
+			is-link
+			left-icon="calendar-o"
+			bind:click-input="onDisplay"
+		/>
+		<van-field
+			readonly	
+			required
+			label="服务时间"
+			placeholder="请选择服务时间"
+			left-icon="clock-o"
+			model:value="{{ valueTime }}"
+			border="{{ true }}"
+			is-link
+			bind:click-input="onOpenTime"
+		/>
+	</view>
+	<view class="message">
+		<view class="message-title">预留信息</view>
+		<van-field
+			label="联系人"
+			required
+			model:value="{{ userName }}"
+			placeholder="请输入姓名"
+			border="{{ true }}"
+			left-icon="user-o"
+		/>
+		<van-field
+			label="联系电话"
+			required
+			type="number"
+			model:value="{{ phone }}"
+			placeholder="请输入联系电话"
+			border="{{ true }}"
+			left-icon="phone-o"
+		/>
+		<van-field
+			label="详情地点"
+			type="textarea"
+			autosize
+			model:value="{{ address }}"
+			placeholder="点击图标获取当前位置"
+			border="{{ true }}"
+			left-icon="guide-o"
+			right-icon="location-o"
+			bind:click-icon="chooseLocation"
+		/>
+		<van-field
+			label="预约备注"
+			type="textarea"
+			autosize
+			model:value="{{ remarks }}"
+			placeholder="请输入人数、要求等信息"
+			border="{{ true }}"
+			left-icon="comment-o"
+		/>
+	</view>
+	<view class="submit-button">
+		<van-button type="primary" 
+			size="large" 
+			bindtap="submit" 
+			color="#90dbe6"
+		>
+			立即预约
+		</van-button>
+	</view>
+	<view class="customer-service">
+		<button open-type="contact" class="service-button">
+			<van-icon name="chat-o" size="35rpx" color="#c8c9cc"/>
+			<text class="service-text">点击联系客服</text>
+		</button>
+	</view>
+	<van-action-sheet
+		show="{{ show }}"
+		actions="{{ actions }}"
+		bind:close="onCloseSheet"
+		bind:select="onSelect"
+	/>
+	<van-action-sheet
+		show="{{ showCampus }}"
+		actions="{{ actionsCampus }}"
+		bind:close="onCloseCampus"
+		bind:select="onSelectCampus"
+	/>
+	<van-action-sheet
+		show="{{ showTime }}"
+		actions="{{ actionsDate }}"
+		bind:close="onClose"
+		bind:select="onSelectDate"
+	/>
+	<!-- <van-calendar 
+		show="{{ showTime }}" 
+		bind:close="onClose" 
+		bind:confirm="onConfirm"
+		min-date="{{ minDate }}"
+ 		max-date="{{ maxDate }}"
+	/> -->
+	<van-action-sheet
+		show="{{ showHour }}"
+		actions="{{ actionsTime }}"
+		bind:close="onCloseTime"
+		bind:select="onSelectTime"
+	>
+	</van-action-sheet>
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" confirm-button-color="green"/>
+</view>

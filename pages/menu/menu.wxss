@@ -1,0 +1,96 @@
+/* pages/menu/menu.wxss */
+.titleTag{
+/* position: relative; */
+  /* align-items:center; */
+margin: 20rpx 0rpx;
+  
+}
+
+.NameTag{
+  /* align-items:center; */
+  /* display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto; */
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.phototype{
+  margin: 0 auto;
+  text-align: center;
+  color: gray;
+  font-size: 20rpx;
+  margin-top: -15rpx;
+}
+.BriefIntroduction{
+  margin: 0 auto;
+  margin-left:40rpx ;
+  margin-right: 40rpx;
+
+  font-size: 25rpx;
+
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 25rpx;
+  font-weight: normal;
+
+}
+
+
+
+.Box-buttom{
+  font-size: 25rpx;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom:30rpx ;
+}
+
+.bottom1{
+  float: right;
+  
+}
+
+.more{
+  margin-right: 20rpx;
+}
+
+.split{
+  margin-left: 20rpx;
+}
+
+
+.bu{
+  color: #90dbe6;
+  font-size: 30rpx;
+}
+.bu1{
+  color: #bfbfbf;
+  font-size: 30rpx;
+}
+.moremore{
+
+  margin-left: 280rpx;
+}
+.button111{
+  font-size: 25rpx;
+  background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  display: inline;
+}
+
+.item-all{
+  width: 100%;
+  margin-bottom: 30rpx;
+}

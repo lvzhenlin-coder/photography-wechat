@@ -1,0 +1,23 @@
+<!--component/appointment/appointment.wxml-->
+<view class="container">
+	<view class="button-container">
+		<button 
+		class="yuyue" 
+		hover-class="yuyue-hover"
+		bindtap="goToPage"
+	>
+		<view class="yuyue-nav">
+			预约
+		</view>
+	</button>
+	</view>
+	<view class="button-container">
+		<button 
+			class="yuyue yuyue-mine" 
+			open-type="share"
+			hover-class="yuyue-hover"
+		>
+			分享
+		</button>
+	</view>
+</view>

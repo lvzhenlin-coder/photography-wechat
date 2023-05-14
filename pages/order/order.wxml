@@ -1,0 +1,107 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="order-card" wx:for="{{list}}" wx:key="index">
+		<view class="order-step">
+			<van-steps 
+				steps="{{ steps }}" 
+				active="{{ item.active }}" 
+				wx:if="{{item.showSteps}}"
+			/>
+			<van-steps 
+				steps="{{ stepsCancel }}" 
+				active="{{ item.active }}" 
+				wx:if="{{!item.showSteps}}"
+			/>
+		</view>
+		<van-cell-group>
+			<van-field
+				readonly
+				label="预约状态:"
+				value="{{ item.status }}"
+				border="{{ false }}"
+			/>
+			<van-field
+				readonly
+				label="预约时间:"
+				value="{{ item.appo_date + ' '+ item.appo_time}}"
+				border="{{ false }}"
+			/>
+			<van-field
+				readonly
+				label="预约校区:"
+				value="{{ item.campus_name }}"
+				border="{{ false }}"
+				autosize="true"
+			/>
+			<van-field
+				autosize="true"
+				readonly
+				label="预约项目:"
+				value="{{ item.service_name }}"
+				border="{{ false }}"	
+			/>
+			<van-field
+				readonly
+				label="联系人:"
+				value="{{ item.user_name }}"
+				border="{{ false }}"
+			/>
+			<van-field
+				readonly
+				label="预留电话:"
+				value="{{ item.user_tel }}"
+				border="{{ false }}"
+			/>
+			<van-field
+				readonly
+				label="预约地点:"
+				autosize
+				value="{{ item.appo_addr }}"
+				border="{{ false }}"
+				type="textarea"
+				autosize="{minHeight: 0 }"
+			/>
+			<van-field
+				readonly
+				label="预约备注:"
+				value="{{ item.remark }}"
+				border="{{ false }}"
+			/>
+		</van-cell-group>
+		<view class="delete">
+			<block wx:if="{{item.showButton}}">
+				<button 
+					class="delete-button" 
+					bindtap="cancelDialog"
+					data-id= "{{item.appo_id}}"
+				>
+					取消预约
+				</button>
+			</block>
+		</view>
+	</view>
+	<van-dialog id="van-dialog" />
+	<van-toast id="van-toast" />
+	<view class="container-button">
+		<view class="button-container">
+			<button 
+				class="yuyue" 
+				hover-class="yuyue-hover"
+				open-type="contact"
+			>
+				<view class="yuyue-nav">
+					客服
+				</view>
+			</button>
+		</view>
+		<view class="button-container">
+			<button 
+				class="yuyue yuyue-mine" 
+				hover-class="yuyue-hover"
+				bindtap="callPhone"
+			>
+				电话
+			</button>
+		</view>
+	</view>
+</view>
